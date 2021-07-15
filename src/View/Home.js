@@ -4,6 +4,7 @@ import { InputGroup, Input, InputGroupAddon, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {FormSearch} from '../Component/formSearch';
 import FooterMovie from '../Component/FooterMovie';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import { fetchPlaying, fetchTopRated, fetchTVPopular, fetchUpComing, carousel, fetchTVTopRated, fetchTVLatest, fetchTVOnTheAir, fetchTVAiringToday } from '../Component/data/data-api';
 
@@ -241,7 +242,11 @@ function Home() {
                         <button className={`${state === 'tv' ? 'actived choose-tv' : 'choose-tv'}`} onClick={() => setState('tv')}>TV Shows</button>                        
                     </div>
                     {state === 'movie' ? MovieList : TvShowsList}
+                    <a className="square text-center">
+                        <ArrowUpwardIcon/>
+                    </a>
                 </div>
+
                 <FooterMovie/>
             </>
         )
