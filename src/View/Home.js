@@ -4,9 +4,13 @@ import { InputGroup, Input, InputGroupAddon, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {FormSearch} from '../Component/formSearch';
 import FooterMovie from '../Component/FooterMovie';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import Sticky from '../Component/sticky';
+import CarouselMovies from '../Component/carousel';
+
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 import { fetchPlaying, fetchTopRated, fetchTVPopular, fetchUpComing, carousel, fetchTVTopRated, fetchTVLatest, fetchTVOnTheAir, fetchTVAiringToday } from '../Component/data/data-api';
+import sticky from '../Component/sticky';
 
 function Home() {
 
@@ -15,7 +19,6 @@ function Home() {
     const [upComing, setUpComing] = useState([]);
     const [inicarousel, setInicarousel] = useState([]);
     const [state,setState] = useState('movie');
-    // const [search, setSearch] = useState([]);
 
 
     const [tvPopular, setTvPopular] = useState([]);
@@ -23,9 +26,13 @@ function Home() {
     const [tvLatest, setTvLatest] = useState([]);
     const [tvOnTheAir, setTvOnTheAir] = useState([]);
     const [tvAiringToday, setTvAiringToday] = useState([]);
+    const [autocarousel, setAutocarousel] = useState(0);
+
+    const [times, setTimes] = useState();
 
         useEffect(() => {
             const fetchAPI = async () => {
+                // setAutocarousel(await 1);
                 setNowPlaying(await fetchPlaying());
                 setTopRated(await fetchTopRated());
                 setUpComing(await fetchUpComing());
@@ -35,26 +42,10 @@ function Home() {
                 setTvLatest(await fetchTVLatest());
                 setTvOnTheAir(await fetchTVOnTheAir());
                 setTvAiringToday(await fetchTVAiringToday());
-                
                 setInicarousel(await carousel());
             }
             fetchAPI();
         },[]);
-
-        const input1 = inicarousel.slice(0,5).map((item,index) => {
-            return (
-                <input type="radio" name="slider" key={index} id={item.no} checked />
-            )
-        });
-
-        const label1 = inicarousel.slice(0,5).map((item) => {
-            return (
-                <label className="w-75" for={item.no} id={item.slide}> 
-                    <img src={item.backposter} alt={item.title} height="100%" width="100%"/>
-                    <p className="mt-n5 text-center p-2">{item.title}</p>
-                </label>
-            )
-        });
 
         const MoviesPlaying = nowPlaying.slice(0,15).map((item, index) => {
             return(
@@ -124,20 +115,6 @@ function Home() {
             )
         });
 
-        // const tvShowsLatest = tvLatest.map((item, index) => {
-        //     return(
-        //         <div className="items" key={index}>
-        //             <Link to={`tv/${item.id}`}>
-        //                 <div class="poster">
-        //                     <img src={item.poster} alt={item.title}/>
-        //                 </div>
-        //                 <p className="text-center mt-2">{item.title}</p>
-        //             </Link>
-        //         </div>
-        //     )
-        // });
-
-
         const tvShowsOnTheAir = tvOnTheAir.slice(0,15).map((item, index) => {
             return(
                 <div className="items" key={index}>
@@ -163,10 +140,6 @@ function Home() {
                 </div>
             )
         });
-
-        const AllCategoryMovie = [MoviesPlaying, MovieTopRated, MovieUpComing];
-        console.log(AllCategoryMovie);
-
         const MovieList = (
             <div>
                 <div class="movie-list mt-2">
@@ -223,31 +196,26 @@ function Home() {
                 </div>
             </div>
         );
-
-
-        return (
+        
+            return (
             <>
-                <NavbarMovie/>
-                <div class="container mb-4">
+                <NavbarMovie id="header"/>
+                <div class="container ">
                     <FormSearch/>
                     <div class="news mt-4">
-                        <p className="title">News Trailer Movies</p>
-                        <div id="slider">
-                            {input1}
-                            {label1}
-                        </div>
+                        <p className="title">Trailer Movies</p>
                     </div>
-                    <div class="choose mx-auto mt-5">
+                </div>
+                <CarouselMovies carouselFetch={inicarousel} />
+                <div class="container mb-4">
+                    <div class="choose mx-auto">
                         <button className={`${state === 'movie' ? 'actived choose-movie' : 'choose-movie'}`} onClick={() => setState('movie')}>Movie</button>
                         <button className={`${state === 'tv' ? 'actived choose-tv' : 'choose-tv'}`} onClick={() => setState('tv')}>TV Shows</button>                        
                     </div>
-                    {state === 'movie' ? MovieList : TvShowsList}
-                    <a className="square text-center">
-                        <ArrowUpwardIcon/>
-                    </a>
+                        {state === 'movie' ? MovieList : TvShowsList}
+                        <Sticky/>
                 </div>
-
-                <FooterMovie/>
+                <FooterMovie id="about-us" />
             </>
         )
 }

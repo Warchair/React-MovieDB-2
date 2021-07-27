@@ -6,7 +6,6 @@ import Genres from './View/Genres';
 import Search from './View/Search';
 
 function App() {
-  
   return(
     <Switch>
       <Route path="/react-moviedb-part3/" exact component={Home}/>

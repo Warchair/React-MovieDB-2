@@ -48,10 +48,10 @@ const NavbarMovie = (props) => {
               <NavLink href="/">News</NavLink>
             </NavItem>
             <NavItem className="mr-4">
-              <NavLink href="/components/">About Us</NavLink>
+              <NavLink href="#about-us" >About Us</NavLink>
             </NavItem>
             <NavItem className="mr-4">
-              <NavLink href="/components/">Contact Us</NavLink>
+              <NavLink href="mailto:chairulsp2@gmail.com">Contact Us</NavLink>
             </NavItem>
             {/* <button className="btn sign-in mr-3">SIGN IN</button>
             <button className="btn sign-up">SIGN UP</button> */}

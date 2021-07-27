@@ -19,9 +19,7 @@ export function FormSearch(props) {
 
     const page = 1;
     const type = 'movie';
-    console.log(inputValue);
     const handleSubmit = (e) => {
-        // <FormSubmit onState={inputValue} />
         e.preventDefault();
         window.location.href = `./search/${type}/q=${inputValue.replace(" ", "+")}/page=${page}`;
     }
@@ -34,7 +32,6 @@ export function FormSearch(props) {
                      <button  type="submit" value="submit" className='ml-auto' >Search</button>
                 </div>
             </form>
-            {/* <DataSearch onState={inputValue}/> */}
         </>
     )
 }

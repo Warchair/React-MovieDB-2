@@ -15,6 +15,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import FooterMovie from '../Component/FooterMovie';
 import { Modal } from 'react-bootstrap';
 import FormSearch from '../Component/formSearch';
+import Sticky from '../Component/sticky';
 
 function Details({match}) {
     const params = match.params;
@@ -338,10 +339,11 @@ function Details({match}) {
                     </div>
                     <div class="recommend-movie">
                         <p className="title">Recommendations Movies</p>
-                        <div class="slider">
+                        <div class="sider">
                             {RecommendMovieList}
                         </div>
                     </div>
+                    <Sticky/>
                 </div>
                     <FooterMovie/>
             </div>

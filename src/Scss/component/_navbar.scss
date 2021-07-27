@@ -1,0 +1,24 @@
+.navbar {
+    background-color:$color-main;
+    color:white;
+    text-decoration: none;
+    .sign-up {
+        background-color: $color-main;
+        color:white;
+        border:2px solid white;
+    }
+    .sign-up:hover {
+        background-color:white;
+        color:$color-main;
+    }
+    .sign-in {
+        background-color: white;
+        color:$color-main;
+        border:2px solid white;
+    }
+    .sign-in:hover {
+        background-color: $color-main;
+        color:white;
+        border:2px solid white;
+    }
+}

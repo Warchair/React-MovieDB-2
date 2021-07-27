@@ -1,0 +1,172 @@
+.movie-details {
+    .container {
+        .col-md-8 {
+            .details {
+                display:flex;
+                gap:20px;
+                flex-wrap: nowrap;
+                img {
+                    border-radius:8px;
+                }
+                .title {
+                    font-size: 25px;
+                }
+                
+                .d-title {
+                    font-size:15px;
+                }
+                .detailing {
+                    li {
+                        display:inline;
+                        list-style:circle;
+                        a {
+                            text-decoration:none;
+                            color:black;
+                        }
+                        a:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+
+                .btn-click {
+                    display:flex;
+                    flex-wrap: wrap;
+                    // grid-template-columns: 1fr 1fr;
+                    gap:10px;
+                    .icons {
+                        display:flex;
+                        flex-wrap: nowrap;
+                        gap:10px;
+
+                        button {
+                            padding:12px;
+                            border-radius: 50px;
+                            border: 3px solid $color-main;
+                            color:white;
+                            background-color: $color-main;
+                        }
+                        button:hover {
+                            background-color: white;
+                            color:$color-main;
+                            border: 3px solid $color-main;
+                        }
+                    }
+                    .btn-trailer {
+                        border:3px solid $color-main;
+                        border-radius:50px;
+                        color:$color-main;
+                    }
+                    .btn-trailer:hover {
+                        background-color: $color-main;
+                        color:white;
+                    }
+                }
+            }
+
+            .other-details {
+                .title {
+                    font-size:25px;
+                }
+
+                .photos {
+                    .p-image {
+                        display:flex;
+                        flex-wrap: nowrap;
+                        gap:10px;
+                        overflow:auto;
+                        padding-bottom: 10px;
+                        .backdrops-image {
+                            width:350px;
+                            height:200px;
+                            background-color: rgba(0,0,0,.5);
+                            border-radius:8px;
+                            img {
+                                height:100%;
+                                width:100%;
+                                border-radius:10px;
+                                }
+                        }
+                            
+                        // }
+                    }
+                }
+
+                .actor {
+                    .castList {
+                        display:flex;
+                        flex-wrap: nowrap;
+                        gap:10px;
+                        overflow:auto;
+                        .casts {
+                            img {
+                                max-height: 200px;
+                                border-radius:10px;
+                            }
+                            .desc {
+                                padding:5px;
+                                p {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+               
+            }
+        }
+
+        .col-md-4 {
+            .crews-data {
+                display:grid;
+                grid-template-columns: 1fr;
+                // gap:10px;
+            }
+            .items {
+                .font-weight-bold {
+                    font-weight: bold;
+                    font-size:18px;
+                }
+                .text-muted {
+                    font-size: 15px;
+                }
+            }
+        }
+
+    }
+}
+
+.recommend-movie {
+    padding-bottom: 10px;
+}
+
+    .sider {
+        display:flex;
+        flex-wrap: nowrap;
+        overflow: auto;
+        gap:10px;
+        .list-movie {
+            list-style: none;
+            a {
+                text-decoration: none;
+                .poster {
+                    height:200px;
+                    width:133.33px;
+                    background-color: rgba(0,0,0,.5);
+                    overflow:hidden;
+                    border-radius:8px;
+                    img {
+                        max-height: 200px;
+                        border-radius:8px;
+                    }
+                }
+                p {
+                    max-width:120px;
+                    font-size:14px;
+                    color:black;
+                    padding:3px;
+                }
+            }
+        }
+    }

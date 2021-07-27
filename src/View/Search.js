@@ -3,6 +3,7 @@ import NavbarMovie from '../Component/Navbar';
 import { fetchSearch, fetchTVSearch} from '../Component/data/data-api';
 import {Link, useParams } from 'react-router-dom';
 import { Pagination } from 'react-bootstrap';
+import Sticky from '../Component/sticky';
 
 function DataSearch({match}) {
 
@@ -159,7 +160,7 @@ function DataSearch({match}) {
                     {params.type === 'movie' ? dataSearch : dataTVSearch}
                 </div>
                 {paginations}
-                
+                <Sticky/>
             </div>
         </>
     )

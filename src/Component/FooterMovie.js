@@ -7,6 +7,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 class FooterMovie extends Component {
 
     render() {
+    // console.log('hello');
+
         return(
             <>
             <div class="footer">
@@ -33,7 +35,7 @@ class FooterMovie extends Component {
                                 <a href="">Contact Us</a>
                                 <a href="">Privacy Policy</a>
                                 <a href="">Faq</a>
-                                <a href="">Github</a>
+                                <a href="https://www.github.com/Warchair">Github</a>
                             </div>
                         </div>
                     </div>
@@ -46,7 +48,7 @@ class FooterMovie extends Component {
                             <a href="https://www.instagram.com/anwar.chair">
                                 <InstagramIcon fontSize="medium"/>  
                             </a>
-                            <a href="">
+                            <a href="https://web.facebook.com/profile.php?id=100012292504457">
                                 <FacebookIcon fontSize="medium"/>   
                             </a>
                             <a href="https://www.twitter.com/people_bngsd">

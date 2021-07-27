@@ -3,6 +3,7 @@ import { fetchGenre } from '../Component/data/data-api';
 import {Link } from 'react-router-dom';
 import NavbarMovie from '../Component/Navbar';
 import { Pagination } from 'react-bootstrap';
+import Sticky from '../Component/sticky';
 
 function Genres({match}) {
 
@@ -108,6 +109,7 @@ function Genres({match}) {
                     {MovieData}
                 </div>
                 {paginations}
+                <Sticky/>
             </div>
         </>
     )
