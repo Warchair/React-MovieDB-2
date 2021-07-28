@@ -1,90 +1,113 @@
 import React, { Component, useState, useEffect, useRef } from 'react';
 import { carousel} from '../Component/data/data-api';
-
-// function useInterval(callback, delay) {
-//     const savedCallback = useRef();
-  
-//     // Remember the latest callback.
-//     useEffect(() => {
-//       savedCallback.current = callback;
-//     }, [callback]);
-  
-//     // Set up the interval.
-//     useEffect(() => {
-//       let id = setInterval(() => {
-//         savedCallback.current();
-//       }, delay);
-//       return () => clearInterval(id);
-//     }, [delay]);
-//   }
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import ReactPlayer from 'react-player';
+import {fetchTrailer} from '../Component/data/data-api';
+import { Modal } from 'react-bootstrap';
 
 function CarouselMovies(props) {
 
     const [selected, SetSelected] = useState(0);
     const [carouselMovies, setCarouselMovies] = useState([]);
+    const [trailer, setTrailer] = useState([]);
+    const [valueTrailer, setValueTrailer] = useState({id:'', type:'',title:''});
+    const [isOpen, setIsOpen] = useState(false);
+
 
     useEffect(() => {
         const fetchMovies = async () => {
             setCarouselMovies(await carousel());
-            const timer = setInterval(() => {
-                SetSelected(selected => selected === 4 ? selected = 0 : selected + 1);
-            },5000);
-            return () => clearInterval(timer);
+            setTrailer(await fetchTrailer(valueTrailer.id, valueTrailer.type));
+            // const timer = setInterval(() => {
+            //     SetSelected(selected => selected === 4 ? selected = 0 : selected + 1);
+            // },5000);
+            // return () => clearInterval(timer);
         }
         fetchMovies();
         
-    },[]);
-
+    },[valueTrailer.id]);
 
     const input1 = carouselMovies.slice(0,5).map((item,index) => {
-        let i = 0;
-        // let testing = document.getElementsByName('slider');
-        // testing[selected].checked = true;
-            
-        // testing[index].addEventListener('click', function() {
-        //     SetSelected(select => select = index);
-        // })
-
-        // console.log(console.log(testing[i]));
-        // setInterval(function() {
-        //     for(let a = 0; a < testing.length; a++) {
-        //     testing[a].addEventListener('click', function() {
-        //         // i = a;
-        //         i = a;
-        //     })
-        // }
-        //     if(i < testing.length) {
-        //         testing[i].checked = true;
-        //     } else if (i === 5) {
-        //         i = 0;
-        //         testing[i].checked = true;
-        //     } else {
-        //         testing[i].checked = true;
-        //     }
-        //     i++
-        // },5000);
         return (            
             <input type="radio" name="slider" key={index} id={item.no} checked={index === selected} onClick={() => SetSelected(select => select = index)} className="carousel"/>
         )
     });
 
+    const handleClick = (id, type, title) => { 
+        setValueTrailer({id:id, type:type, title:title});
+        setIsOpen(true);
+    }
+
     const label1 = carouselMovies.slice(0,5).map((item) => {
         return (
             <label className="" for={item.no} id={item.slide}>
+                <div className="icons" >
+                    <PlayCircleOutlineIcon className="trailer-icons" id="playbutton" onClick={() => handleClick(item.id, 'movie', item.title)} />
+                </div>
                 <img src={item.backposter} alt={item.title}/>
                 <p className="mt-n5 text-center">{item.title}</p>
             </label>
         )
     });
 
+    const TrailerMovie = (props) => {
+        const YoutubeUrl = 'https://www.youtube.com/watch?v=';
+        const reactplayer = () => {
+            if(trailer === undefined) {
+                return <h6 className="text-center" style={{color:'white'}}>Trailer is not Available</h6>
+            } else {
+                return (
+                    <ReactPlayer
+                    url={YoutubeUrl + trailer.key}
+                    playing
+                    width="100%"
+                    />
+                )
+            }
+        }
+        return (
+            <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title
+                    id="contained-modal-title-vcenter"
+                    style={{color:"#000000", fontWeight:"bolder" }}
+                    >
+                        {valueTrailer.title}
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body
+                    style={{backgroundColor:"#000000"}}
+                >   
+                    {reactplayer()}
+                </Modal.Body>
+            </Modal>
+        )
+    }
+
+    // console.log(valueTrailer.id, valueTrailer.type);
+
     return (
-        <div className="trailer-news">
-            {/* <p>Selected {selected} </p> */}
-            <div id="slider">
-                {input1}
-                {label1}
+        <>
+            <TrailerMovie
+                show={isOpen}
+                onHide={() => {
+                    setIsOpen(false)
+                }}
+                />
+
+            <div className="trailer-news">
+                {/* <p>Selected {selected} </p> */}
+                <div id="slider">
+                    {input1}
+                    {label1}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

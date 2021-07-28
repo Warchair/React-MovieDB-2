@@ -85,6 +85,30 @@
   font-size: 25px;
 }
 
+.movie-details .container .col-md-8 .other-details .photos {
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.movie-details .container .col-md-8 .other-details .photos .p-image::-webkit-scrollbar {
+  width: 10px;
+}
+
+.movie-details .container .col-md-8 .other-details .photos .p-image::-webkit-scrollbar-track {
+  border: 1px solid #B80000;
+  border-radius: 10px;
+}
+
+.movie-details .container .col-md-8 .other-details .photos .p-image::-webkit-scrollbar-thumb {
+  background: #B80000;
+  border-radius: 10px;
+}
+
+.movie-details .container .col-md-8 .other-details .photos .p-image::-webkit-scrollbar-thumb:hover {
+  opacity: .5;
+}
+
 .movie-details .container .col-md-8 .other-details .photos .p-image {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,6 +174,27 @@
 
 .recommend-movie {
   padding-bottom: 10px;
+}
+
+.sider::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.sider::-webkit-scrollbar-track {
+  border: 1px solid #B80000;
+  border-radius: 10px;
+}
+
+/* Handle */
+.sider::-webkit-scrollbar-thumb {
+  background: #B80000;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.sider::-webkit-scrollbar-thumb:hover {
+  opacity: .5;
 }
 
 .sider {
@@ -372,6 +417,17 @@
   transition: -webkit-transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.trailer-news #slider label .icons #playbutton {
+  color: orange;
+  font-size: 50px;
+}
+
+.trailer-news #slider label .icons .trailer-icons {
+  position: absolute;
+  right: calc(50% - 34px);
+  bottom: calc(50% - 25px);
 }
 
 .trailer-news #slider label img {
@@ -605,27 +661,6 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  border: 1px solid #B80000;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #B80000;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  opacity: .5;
-}
-
 .slider {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -634,6 +669,27 @@ html {
       flex-wrap: nowrap;
   gap: 10px;
   overflow: auto;
+}
+
+.slider::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.slider::-webkit-scrollbar-track {
+  border: 1px solid #B80000;
+  border-radius: 10px;
+}
+
+/* Handle */
+.slider::-webkit-scrollbar-thumb {
+  background: #B80000;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.slider::-webkit-scrollbar-thumb:hover {
+  opacity: .5;
 }
 
 .items .poster {

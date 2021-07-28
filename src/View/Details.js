@@ -1,7 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import { fetchCast, fetchCrews, fetchDetails, fetchSimilar, fetchTrailer, fetchRecommendMovie, fetchGenre, fetchImages } from '../Component/data/data-api';
 import NavbarMovie from '../Component/Navbar';
-// import Carousel from 'react-bootstrap/Carousel';
 
 import { Link } from 'react-router-dom';
 
@@ -29,7 +28,6 @@ function Details({match}) {
     const [images, setImages] = useState([]);
 
     const [isOpen, setIsOpen] = useState(false);
-    // const [movieGenre,  setMovieGenre] = useState([]);
 
     useEffect(() => {
         const fetchAPI = async () => {
