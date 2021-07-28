@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/React-MovieDB-2/static/css/main.be5ed041.chunk.css",
+    "main.js": "/React-MovieDB-2/static/js/main.cda2dc4c.chunk.js",
+    "main.js.map": "/React-MovieDB-2/static/js/main.cda2dc4c.chunk.js.map",
+    "runtime-main.js": "/React-MovieDB-2/static/js/runtime-main.94578a15.js",
+    "runtime-main.js.map": "/React-MovieDB-2/static/js/runtime-main.94578a15.js.map",
+    "static/css/2.379a8125.chunk.css": "/React-MovieDB-2/static/css/2.379a8125.chunk.css",
+    "static/js/2.0be5a1bb.chunk.js": "/React-MovieDB-2/static/js/2.0be5a1bb.chunk.js",
+    "static/js/2.0be5a1bb.chunk.js.map": "/React-MovieDB-2/static/js/2.0be5a1bb.chunk.js.map",
+    "index.html": "/React-MovieDB-2/index.html",
+    "static/css/2.379a8125.chunk.css.map": "/React-MovieDB-2/static/css/2.379a8125.chunk.css.map",
+    "static/css/main.be5ed041.chunk.css.map": "/React-MovieDB-2/static/css/main.be5ed041.chunk.css.map",
+    "static/js/2.0be5a1bb.chunk.js.LICENSE.txt": "/React-MovieDB-2/static/js/2.0be5a1bb.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/React-MovieDB-2/static/media/yugothib.d02b25c4.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.94578a15.js",
+    "static/css/2.379a8125.chunk.css",
+    "static/js/2.0be5a1bb.chunk.js",
+    "static/css/main.be5ed041.chunk.css",
+    "static/js/main.cda2dc4c.chunk.js"
+  ]
+}
