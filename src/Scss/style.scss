@@ -85,32 +85,18 @@ html {
     }
 }
 
-.pagination {
-    .btn-prev, .btn-next {
-        border:2px solid $color-main;
-        padding:5px 10px 5px 10px;
-        background-color: white;
-        border-radius: 2px;
-        color:$color-main;
+.pagin {
+    a {
         text-decoration: none;
+        color:#B80000;
+        margin:10px;
     }
-    .btn-prev:hover , .btn-next:hover {
-        background-color: $color-main;
-        color:white;
+    .disabled {
+        pointer-events: none;
     }
-    .page-item {
-        .page-link {
-            color:$color-main;
-            border:2px solid $color-main;
-        }
-        
-    }
-    .active {
-        .page-link {
-            color:white;
-            background-color: $color-main;
-            border:2px solid $color-main;
-        }
+    #active {
+        color:black;
+        font-size: 20px;
     }
 }
 

@@ -28,13 +28,13 @@ class FooterMovie extends Component {
                             </div>
 
                             <div class="info mt-5">
-                                <a href="">Information</a>
-                                <a href="">Ratings</a>
-                                <a href="">Language</a>
-                                <a href="">Blogs</a>
-                                <a href="">Contact Us</a>
-                                <a href="">Privacy Policy</a>
-                                <a href="">Faq</a>
+                                <a href="/React-MovieDB-2/">Information</a>
+                                <a href="/React-MovieDB-2/">Ratings</a>
+                                <a href="/React-MovieDB-2/">Language</a>
+                                <a href="/React-MovieDB-2/">Blogs</a>
+                                <a href="/React-MovieDB-2/">Contact Us</a>
+                                <a href="/React-MovieDB-2/">Privacy Policy</a>
+                                <a href="/React-MovieDB-2/">Faq</a>
                                 <a href="https://www.github.com/Warchair">Github</a>
                             </div>
                         </div>

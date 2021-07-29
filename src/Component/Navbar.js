@@ -23,7 +23,7 @@ const NavbarMovie = (props) => {
     <div>
       <Navbar className="navbar" dark expand="md">
         <div class="container">
-        <NavbarBrand href="/">Movie<strong>GO</strong></NavbarBrand>
+        <NavbarBrand href="/React-MovieDB-2/">Movie<strong>GO</strong></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
@@ -33,22 +33,18 @@ const NavbarMovie = (props) => {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  Option 1
+                  Movie
                 </DropdownItem>
                 <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
+                  TV Series
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem className="mr-4">
-              <NavLink href="/">News</NavLink>
+              <NavLink href="/React-MovieDB-2/">News</NavLink>
             </NavItem>
             <NavItem className="mr-4">
-              <NavLink href="#about-us" >About Us</NavLink>
+              <NavLink href="/React-MovieDB-2/" >About Us</NavLink>
             </NavItem>
             <NavItem className="mr-4">
               <NavLink href="mailto:chairulsp2@gmail.com">Contact Us</NavLink>

@@ -54,16 +54,15 @@ function Genres({match}) {
 
     const page = pageLimit(items).map((number) => {
         return (
-            <Pagination.Item 
+            <a 
                 key={number} 
-                id={number} 
-                active={Number(params.page) === number} 
+                // id={number} 
+                id={Number(params.page) === number ? 'active' : 'disactive'} 
                 // onClick={e => pageNumberClick(e)}
                 href={`page=${number}`}
-                
                 className={number === '...' ? 'disabled' : 'actived'}>
                 {number}
-                </Pagination.Item>
+                </a>
         )
     })
 
@@ -71,7 +70,7 @@ function Genres({match}) {
 
     const paginations = (
         <div class="">
-            <Pagination>
+            <div className="pagin mb-4">
                 <a 
                 className="btn-prev" 
                 href={`page=${currentPage === 1 ? currentPage : currentPage - 1}`}>
@@ -84,7 +83,7 @@ function Genres({match}) {
                 href={`page=${currentPage === items.length ? currentPage : currentPage + 1}`}>
                 Next
                 </a>
-            </Pagination>
+            </div>
         </div>
     )
 
@@ -105,7 +104,8 @@ function Genres({match}) {
         <>
             <NavbarMovie/>
             <div class="container">
-                <div class="movie-genres mt-4">
+                <h2 className="mt-4">{params.name}</h2>
+                <div class="movie-genres mt-3">
                     {MovieData}
                 </div>
                 {paginations}

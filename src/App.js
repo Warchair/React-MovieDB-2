@@ -9,7 +9,7 @@ function App() {
     <Switch>
       <Route path="/React-MovieDB-2/" exact component={Home}/>
       <Route path="/React-MovieDB-2/:type/:id" exact component={Details} />
-      <Route path="/React-MovieDB-2/genres/:type/:id/page=:page" exact component={Genres} />
+      <Route path="/React-MovieDB-2/genres/:type/:id-:name/page=:page" exact component={Genres} />
       <Route path="/React-MovieDB-2/search/:type/q=:id/page=:page" exact component={Search}/>
       <Redirect from="*" to="/React-MovieDB-2/" />
     </Switch>

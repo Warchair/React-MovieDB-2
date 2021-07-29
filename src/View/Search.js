@@ -74,16 +74,15 @@ function DataSearch({match}) {
 
     const page = pageLimit(items).map((number) => {
             return (
-                <Pagination.Item 
+                <a 
                 key={number} 
-                id={number} 
-                active={Number(params.page) === number} 
+                // id={number} 
+                id={Number(params.page) === number ? 'active' : 'disactive'} 
                 // onClick={e => pageNumberClick(e)}
                 href={`page=${number}`}
-                
                 className={number === '...' ? 'disabled' : 'actived'}>
                 {number}
-                </Pagination.Item>
+                </a>
             )
         
     })
@@ -92,7 +91,7 @@ function DataSearch({match}) {
 
     const paginations = (
         <div >
-            <Pagination>
+            <div className="pagin mb-4">
                 <a 
                 className="btn-prev" 
                 href={`page=${currentPage === 1 ? currentPage : currentPage - 1}`}>
@@ -105,7 +104,7 @@ function DataSearch({match}) {
                 href={`page=${currentPage === items.length ? currentPage : currentPage + 1}`}>
                 Next
                 </a>
-            </Pagination>
+            </div>
         </div>
     )
 

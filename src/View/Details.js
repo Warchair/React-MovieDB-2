@@ -134,7 +134,7 @@ function Details({match}) {
     if(genre) {
         genreMovie = genre.map((val,i) => {
             return (
-                <a href={`../genres/${params.type}/${val.id}/page=1`}>
+                <a href={`../genres/${params.type}/${val.id}-${val.name}/page=1`}>
                     <span className="" key={i}>{val.name}, </span>
                 </a>
             )

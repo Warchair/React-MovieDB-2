@@ -598,9 +598,12 @@
 .container .hasil-input {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(170px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  -ms-grid-columns: (minmax(170px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container .hasil-input .list-film a {
@@ -715,29 +718,19 @@ html {
   color: black;
 }
 
-.pagination .btn-prev, .pagination .btn-next {
-  border: 2px solid #B80000;
-  padding: 5px 10px 5px 10px;
-  background-color: white;
-  border-radius: 2px;
-  color: #B80000;
+.pagin a {
   text-decoration: none;
-}
-
-.pagination .btn-prev:hover, .pagination .btn-next:hover {
-  background-color: #B80000;
-  color: white;
-}
-
-.pagination .page-item .page-link {
   color: #B80000;
-  border: 2px solid #B80000;
+  margin: 10px;
 }
 
-.pagination .active .page-link {
-  color: white;
-  background-color: #B80000;
-  border: 2px solid #B80000;
+.pagin .disabled {
+  pointer-events: none;
+}
+
+.pagin #active {
+  color: black;
+  font-size: 20px;
 }
 
 @media (max-width: 920px) {
