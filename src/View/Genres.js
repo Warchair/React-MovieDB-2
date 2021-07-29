@@ -4,6 +4,7 @@ import {Link } from 'react-router-dom';
 import NavbarMovie from '../Component/Navbar';
 import { Pagination } from 'react-bootstrap';
 import Sticky from '../Component/sticky';
+import FooterMovie from '../Component/FooterMovie';
 
 function Genres({match}) {
 
@@ -111,6 +112,7 @@ function Genres({match}) {
                 {paginations}
                 <Sticky/>
             </div>
+            <FooterMovie/>
         </>
     )
 }

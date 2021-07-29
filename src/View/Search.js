@@ -4,6 +4,7 @@ import { fetchSearch, fetchTVSearch} from '../Component/data/data-api';
 import {Link, useParams } from 'react-router-dom';
 import { Pagination } from 'react-bootstrap';
 import Sticky from '../Component/sticky';
+import FooterMovie from '../Component/FooterMovie';
 
 function DataSearch({match}) {
 
@@ -161,6 +162,7 @@ function DataSearch({match}) {
                 {paginations}
                 <Sticky/>
             </div>
+            <FooterMovie/>
         </>
     )
 }
